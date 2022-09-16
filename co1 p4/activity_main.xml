@@ -87,7 +87,7 @@
 
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/dob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -96,7 +96,7 @@
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -104,7 +104,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -117,7 +117,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextTextPersonName11"
+            android:id="@+id/country"
             android:layout_width="436dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -129,7 +129,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editTextTextPostalAddress"
+        android:id="@+id/zipcode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -137,7 +137,7 @@
         android:inputType="textPostalAddress" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/pass"
         android:layout_width="414dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -145,7 +145,7 @@
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/cpass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -165,7 +165,7 @@
             android:textSize="14sp" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
+            android:id="@+id/check"
             android:layout_width="58dp"
             android:layout_height="29dp"
             android:layout_weight="1" />
