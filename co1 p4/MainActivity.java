@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -15,6 +16,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     private EditText firstname,lastname;
     private RadioGroup radiogroup;
+    private CheckBox check;
     private EditText dob,email,phone,country,zip,pass,cpass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +32,22 @@ public class MainActivity extends AppCompatActivity {
         zip=(EditText) findViewById(R.id.zipcode);
         pass=(EditText) findViewById(R.id.pass);
         cpass=(EditText) findViewById(R.id.cpass);
+        check=(CheckBox) findViewById(R.id.check);
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(firstname.getText().toString().isEmpty() || lastname.getText().toString().isEmpty() || dob.getText().toString().isEmpty()|| email.getText().toString().isEmpty() || phone.getText().toString().isEmpty() || country.getText().toString().isEmpty()|| zip.getText().toString().isEmpty()|| pass.getText().toString().isEmpty() || cpass.getText().toString().isEmpty()){
+                int flag=0;
+                if(firstname.getText().toString().isEmpty() || lastname.getText().toString().isEmpty() || dob.getText().toString().isEmpty()|| email.getText().toString().isEmpty() || phone.getText().toString().isEmpty() || country.getText().toString().isEmpty()|| zip.getText().toString().isEmpty()|| pass.getText().toString().isEmpty() || cpass.getText().toString().isEmpty() || !check.isChecked()){
+                    flag=1;
                     Toast.makeText(MainActivity.this, "Fields Cannot be empty", Toast.LENGTH_SHORT).show();
                 }
                 int radioId = radiogroup.getCheckedRadioButtonId();
-                if(radioId<1){
-                    Toast.makeText(MainActivity.this,"Gender is required",Toast.LENGTH_SHORT).show();
+                if(radioId<1) {
+                    flag=1;
+                    Toast.makeText(MainActivity.this, "Gender is required", Toast.LENGTH_SHORT).show();
+                }
+                if(flag==0){
+                    Toast.makeText(MainActivity.this, "Applied Successfully", Toast.LENGTH_SHORT).show();
                 }
             }
 
