@@ -58,7 +58,6 @@
         android:drawableTop="@drawable/ic_baseline_photo_camera_24"
         android:paddingTop="15dp"
         android:drawablePadding="-20dp"
-        android:onClick="capturePer"
         android:textSize="19dp"/>
 
     <Button
