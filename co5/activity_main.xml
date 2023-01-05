@@ -1,97 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/label_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:text="Name" />
-
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="333dp"
-        android:layout_height="59dp"
-        android:layout_toRightOf="@+id/label_name"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/label_contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contact"
-        android:layout_below="@+id/label_name"
-        android:padding="15dp"/>
-
-    <EditText
-        android:id="@+id/contact"
-        android:layout_width="332dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/name"
-        android:layout_toRightOf="@+id/label_contact"
-        android:ems="10"
-        android:inputType="textPersonName" />
-    <TextView
-        android:id="@+id/label_dob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DOB"
-        android:layout_below="@+id/label_contact"
-        android:padding="25dp"/>
-
-    <EditText
-        android:id="@+id/dob"
-        android:layout_width="333dp"
-        android:layout_height="66dp"
-        android:layout_below="@+id/contact"
-        android:layout_toRightOf="@+id/label_dob"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
     <Button
-        android:id="@+id/insert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dob"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="75dp"
-        android:text="INSERT" />
-
-    <Button
-        android:id="@+id/update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dob"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="76dp"
-        android:layout_toRightOf="@+id/insert"
-        android:text="UPDATE" />
-
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dob"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="76dp"
-        android:layout_toRightOf="@+id/update"
-        android:text="DELETE" />
+        android:id="@+id/adduser"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:onClick="insertUser"
+        android:text="Add User"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num"
+        app:layout_constraintVertical_bias="0.082" />
 
     <Button
         android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dob"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="78dp"
-        android:layout_toRightOf="@+id/delete"
-        android:text="VIEW" />
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:onClick="viewUser"
+        android:text="View Users"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/delete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="292dp"
+        android:onClick="deleteUser"
+        android:text="Delete User"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adduser"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.174" />
+
+    <EditText
+        android:id="@+id/num"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="Mobile Number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354" />
+    <TextView
+        android:layout_width="319dp"
+        android:layout_height="27dp"
+        android:text="User Registration"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <EditText
+        android:id="@+id/add"
+        android:layout_width="188dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:onClick="updateUser"
+        android:text="Update Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/adduser"
+        app:layout_constraintTop_toBottomOf="@+id/num"
+        app:layout_constraintVertical_bias="0.082" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</RelativeLayout>
+
